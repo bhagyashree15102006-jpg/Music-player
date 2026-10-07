@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  --win-gray: #c0c0c0;
+  --win-light: #ffffff;
+  --win-mid-gray: #808080;
+  --win-dark: #000000;
+  --win-teal: #008080;
+  --win-dark-teal: #004d40;
+  --win-green-title: #0f6c3f;
+}
+
+body {
+  background-color: #008080;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-size: 8px 8px;
+  font-family: 'Wix Madefor Text', 'MS Sans Serif', Tahoma, sans-serif;
+  -webkit-font-smoothing: none;
+  margin: 0;
+  padding: 0;
+}
+
+.font-pixel {
+  font-family: 'VT323', monospace;
+  letter-spacing: 0.5px;
+}
+
+.font-bitmap {
+  font-family: 'Silkscreen', 'VT323', monospace;
+  letter-spacing: -0.5px;
+}
+
+/* Outset 3D Raised Box (Standard Windows Button/Window Frame) */
+.win-bevel-raised {
+  border-top: 2px solid var(--win-light);
+  border-left: 2px solid var(--win-light);
+  border-right: 2px solid var(--win-dark);
+  border-bottom: 2px solid var(--win-dark);
+  box-shadow: inset 1px 1px 0px #dfdfdf, inset -1px -1px 0px var(--win-mid-gray);
+}
+
+.win-button {
+  border-top: 2px solid var(--win-light);
+  border-left: 2px solid var(--win-light);
+  border-right: 2px solid var(--win-dark);
+  border-bottom: 2px solid var(--win-dark);
+  box-shadow: inset 1px 1px 0px #ffffff, inset -1px -1px 0px #707070;
+  background-color: var(--win-gray);
+  user-select: none;
+  cursor: pointer;
+}
+
+.win-button:active, .win-button.active {
+  border-top: 2px solid var(--win-dark);
+  border-left: 2px solid var(--win-dark);
+  border-right: 2px solid var(--win-light);
+  border-bottom: 2px solid var(--win-light);
+  box-shadow: inset 1px 1px 0px #404040;
+  padding-top: 1px;
+  padding-left: 1px;
+}
+
+/* Inset 3D Sunken Box (Displays, Trackwells, Deep Insets) */
+.win-bevel-sunken {
+  border-top: 2px solid var(--win-mid-gray);
+  border-left: 2px solid var(--win-mid-gray);
+  border-right: 2px solid var(--win-light);
+  border-bottom: 2px solid var(--win-light);
+  box-shadow: inset 1px 1px 1px #000000;
+}
+
+.win-sunken-shallow {
+  border-top: 1px solid var(--win-mid-gray);
+  border-left: 1px solid var(--win-mid-gray);
+  border-right: 1px solid var(--win-light);
+  border-bottom: 1px solid var(--win-light);
+  box-shadow: inset 1px 1px 0px #404040;
+}
+
+/* Tab strip active & inactive states */
+.win-tab-active {
+  border-top: 2px solid var(--win-light);
+  border-left: 2px solid var(--win-light);
+  border-right: 2px solid var(--win-dark);
+  border-bottom: none;
+  background-color: var(--win-gray);
+  margin-bottom: -2px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.win-tab-inactive {
+  border-top: 2px solid #e0e0e0;
+  border-left: 2px solid #e0e0e0;
+  border-right: 2px solid #505050;
+  border-bottom: 2px solid var(--win-mid-gray);
+  background-color: #a8a8a8;
+  cursor: pointer;
+}
+
+/* Custom vertical slider track */
+input[type=range].eq-slider-vertical {
+  -webkit-appearance: none;
+  appearance: none;
+  writing-mode: vertical-lr;
+  direction: rtl;
+  width: 14px;
+  height: 72px;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type=range].eq-slider-vertical::-webkit-slider-runnable-track {
+  width: 4px;
+  background: #404040;
+  border-left: 1px solid #000;
+  border-right: 1px solid #fff;
+}
+
+input[type=range].eq-slider-vertical::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  width: 14px;
+  margin-left: -5px;
+  background: #c0c0c0;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  cursor: pointer;
+}
+
+/* Subtle CRT Grain & Scanline effect */
+.crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.15) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Custom scrollbars matching Windows 95 */
+::-webkit-scrollbar {
+  width: 16px;
+  background: #dfdfdf;
+}
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  box-shadow: inset 1px 1px 0px #ffffff, inset -1px -1px 0px #707070;
+}

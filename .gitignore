@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Production build
+client/dist/
+
+# Python cache & logs
+__pycache__/
+*.pyc
+*.log
+*.tmp
+test_spotapi_res.json
+prd_content.txt
+
+# Environment
+.env
+.env.local
+
+# OS files
+Thumbs.db
+.DS_Store
